@@ -26,10 +26,10 @@ public class MainActivity extends Activity {
         s.setDomStorageEnabled(true);
         w.setWebViewClient(new WebViewClient() {
             @Override public void onReceivedError(WebView v, int c, String d, String u) {
-                v.loadData("<body style='background:#0d1117;color:#eee;font:22px sans-serif;padding:40px'>"
+                v.loadDataWithBaseURL(null,"<body style='background:#0d1117;color:#eee;font:22px sans-serif;padding:40px'>"
                     + "Cannot reach the PC.<br><br>Make sure TabletLink is running on the PC, "
                     + "the address is right, and both are on the same Wi-Fi (or USB is connected).<br><br>"
-                    + "Press Back to change the address.</body>", "text/html", "utf-8");
+                    + "Press Back to change the address.</body>", "text/html", "utf-8", null);
             }
         });
         String a = p.getString("a", null);
